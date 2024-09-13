@@ -55,9 +55,27 @@ user ="""
     shrek = shrek@gmail.com
 """
 user = user.split()
+"""
 # test
 user1 = user[2]
 check1 = '@hotmail' in user1
 print(check1)
+"""
+# set up dictionary
+email_count_dict = {
+    '@hotmail':0,
+    '@gmail':0,
+    '@yahoo':0,
+}
 # loop to go through each word
 # save the count of emails in a dictionary
+for email in user:
+    if '@hotmail' in email:
+        email_count_dict['@hotmail'] += 1
+    elif '@gmail' in email:
+        email_count_dict['@gmail'] += 1
+    elif '@yahoo' in email:
+        email_count_dict['@yahoo'] += 1
+# print dictionary
+for countemail in email_count_dict:
+    print(f"{countemail} = {email_count_dict[countemail]}")
